@@ -1,7 +1,15 @@
+"""Programm to have a list of Persons and their Information and to filter by these
+Informations to the spezific person. Good for student list
+Informations or customer Informations
+"""
+
 import json
 
 
 def filter_users_by_name(name):
+    """get the list of informations. searching the information
+    by filter 'name' and return all informations of the spezific person/s
+    """
     with open("users.json", "r") as file:
         users = json.load(file)
 
@@ -11,6 +19,9 @@ def filter_users_by_name(name):
         print(user)
 
 def filter_users_age(ages):
+    """get the list of informations. searching the information
+    by filter 'age' and return all informations of the spezific person/s
+    """
     with open("users.json", "r") as file:
         users = json.load(file)
 
