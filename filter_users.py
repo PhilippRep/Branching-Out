@@ -29,6 +29,9 @@ def filter_users_age(ages):
         print(user)
 
 def filter_users_by_email(email):
+    """get the list of informations. searching the information
+        by filter 'email' and return all informations of the spezific person/s
+        """
     with open("users.json", "r") as file:
         users = json.load(file)
     filtered_users = [user for user in users if user["email"].lower() == email.lower()]
