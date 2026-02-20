@@ -4,17 +4,18 @@ Informations or customer Informations
 """
 
 import json
+import os
 
 
 def filter_users_by_name(name):
     """get the list of informations. searching the information
     by filter 'name' and return all informations of the spezific person/s
     """
-    with open("users.json", "r") as file:
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(base_dir, "users.json")
+    with open(file_path, "r") as file:
         users = json.load(file)
-
     filtered_users = [user for user in users if user["name"].lower() == name.lower()]
-
     for user in filtered_users:
         print(user)
 
@@ -22,7 +23,9 @@ def filter_users_age(ages):
     """get the list of informations. searching the information
     by filter 'age' and return all informations of the spezific person/s
     """
-    with open("users.json", "r") as file:
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(base_dir, "users.json")
+    with open(file_path, "r") as file:
         users = json.load(file)
     filtered_users = [user for user in users if user["age"] == int(ages)]
     for user in filtered_users:
@@ -32,7 +35,9 @@ def filter_users_by_email(email):
     """get the list of informations. searching the information
         by filter 'email' and return all informations of the spezific person/s
         """
-    with open("users.json", "r") as file:
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(base_dir, "users.json")
+    with open(file_path, "r") as file:
         users = json.load(file)
     filtered_users = [user for user in users if user["email"].lower() == email.lower()]
     for user in filtered_users:
